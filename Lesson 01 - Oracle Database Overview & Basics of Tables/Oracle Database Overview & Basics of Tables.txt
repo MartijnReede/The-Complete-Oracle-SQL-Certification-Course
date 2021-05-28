@@ -1,0 +1,28 @@
+
+******* DATABASES *******
+
+- Data in a database is stored in database tables. 
+- A record is a set of data presented in a row of a table.
+- A database is a collection of tables.
+- Each table is a collection of rows and columns. 
+
+******* SQL *******
+
+- SQL = a language that is used to interact with a database.
+- SQL = Structured queary language.
+- SQL can add, delete, edit data.
+
+
+******* Queries *******
+
+- Queries are instructions to the database written in SQL.
+
+******* Oracle cloud installation *******
+
+- APEX is an application (website) used to access the oracle cloud database. 
+- APEX is going to be used throughout this course.
+- We're going to use the Apex SQL Command Editor in our browser. 
+ 
+
+
+
