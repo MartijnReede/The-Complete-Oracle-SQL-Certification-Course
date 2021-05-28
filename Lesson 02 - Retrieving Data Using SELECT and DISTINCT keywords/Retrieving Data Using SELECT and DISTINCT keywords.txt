@@ -1,0 +1,31 @@
+- Sometimes tables are called objects in SQL. Objects can be much more than only tables. 
+
+- The SQL language is not case sensitive.
+- A SQL statement is made up of keywords.
+
+****** THE SELECT KEYWORD ******
+
+To retrieve data we can use the SELECT and FROM keywords: 
+- SELECT --> <column>
+- FROM   --> <table>
+
+- Example of statement: SELECT job(column) FROM employees(table);
+- Example statement with two columns: SELECT job, ename FROM employees;
+- * Operator: will return all of the columns. 
+- Example with using the * operator: SELECT * FROM employees;
+
+- We can only run one statement at a time. We can type in more statements at the same time, but we have to divide them
+with semicolons. 
+
+****** THE DISTINCT KEYWORD ******
+
+- If we use the distinct keyword, we will only get the unique values from the database. 
+- Example of DISTINCT query: SELECT DISTINCT job FROM emp;
+
+
+****** ASSIGNMENT ******
+
+Write a quary that retrieves only the DEPARTMENT_NAME and LOCATION from the departments table.
+
+Solution: SELECT dname, loc FROM DEPT;
+
