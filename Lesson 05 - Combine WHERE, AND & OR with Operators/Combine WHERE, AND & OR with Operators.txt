@@ -1,0 +1,18 @@
+****** OR KEYWORD ******
+
+- For example: if we want to find all employees with the job title 'SALESMAN' or 'CLERK'
+we cannot use the AND keyword. This is because one employee cannot have the title SALESMAN and CLERK.
+It is either a clerk or salesman, not both. This is where we use the OR keyword. 
+
+- Example for a correct statement: SELECT * FROM emp WHERE job = 'SALESMAN' OR job = 'CLERK';
+
+****** ASSIGNMENT ******
+
+1. Get the names of the employees that are not managers, nor salesman and have a salary
+greater than or equal to 2000;
+
+SOLUTION:
+SELECT ename FROM emp WHERE job != 'MANAGER' AND job != 'SALESMAN' AND sal >= 2000;
+
+2. Get the names and hiring dates of those employees that work in dalas or chicago. 
+SELECT ename, hiredate FROM emp WHERE deptno = 20 OR deptno = 30;
