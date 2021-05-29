@@ -1,0 +1,67 @@
+****** IN KEYWORD ******
+
+- The IN keyword is used if the record needs to meet to multiple requirments. 
+for example: We are looking for employees with the job title of 'MANAGER' and 'SALESMAN'.
+We can write this down like: job = 'MANAGER or job = 'SALESMAN', or we can write:
+job IN ('MANAGER', 'SALESMAN').
+
+Example query: 
+SELECT * FROM emp WHERE job IN ('MANAGER', 'SALESMAN');
+
+
+****** NOT IN KEYWORDS ******
+
+- If we don't want the records to have a job title as manager or salesman, we can use the NOT IN keywords.
+
+Example query:
+SELECT * FROM emp WHERE job NOT IN ('MANAGER', 'SALESMAN');
+
+
+****** DATES IN SQL ******
+
+- Dates in SQL are always written between single quotes. 
+
+
+
+****** BETWEEN OPERATOR ******
+
+- With the BETWEEN operator, we can select records that meet certain requirments between certain values. 
+
+Example:
+SELECT * FROM emp WHERE sal BETWEEN 1500 AND 2000;
+
+- IMPORTANT: the BETWEEN operator works inclusive. So it is >= 1500 and <= 2000;
+
+
+****** NOT BETWEEN OPERATOR ******
+
+- We can also use the NOT BETWEEN operator, to retrieve all data around a certain condition. 
+
+Example:
+SELECT * FROM WHERE sal NOT BETWEEN 1000 AND 2000;
+
+
+****** EMPTY CELLS ******
+
+- NULL means that there is no data available for a certain cell. 
+
+- If we want to select records that have a NULL value in a certain cell we also have to use the IS keyword. 
+
+Eample: 
+SELECT * FROM emp WHERE comm IS NULL;
+
+- We can also use IS NOT NULL.
+
+Example:
+SELECT * FROM emp WHERE comm IS NOT NULL;
+
+
+****** ASSIGNMENT ******
+
+1. Write a query that presents all employees with a salary between 1000 and 2000.
+
+SOLUTION: SELECT * FROM emp WHERE sal BETWEEN 1000 AND 2000;
+
+2. Write a query that returns those employees that don't make any commision and have a salary greater than 1100 but less than 5000. Exclude those employees that have a salary equal to 3000. 
+
+SOLUTION: SELECT * FROM emp WHERE (comm IS NULL OR comm = 0) AND sal != 3000 AND sal BETWEEN 1101 and 4999; 
