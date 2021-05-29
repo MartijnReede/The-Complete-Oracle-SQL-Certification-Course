@@ -1,0 +1,29 @@
+****** ORDERING CONDITIONS ******
+
+- Always remember that OR divides the complete condition.
+
+Example: SELECT * FROM emp WHERE sal > 3000 AND deptno = 10 OR job = 'MANAGER' AND comm > 100;
+The conditions above are: (sal > 3000 AND deptno = 10) OR (job = 'MANAGER' AND comm > 100);
+
+- As you can see above, the OR keyword divides the complete condition in two conditions. 
+
+
+****** LIKE OPERATOR ******
+
+- We can use the LIKE operator for the following: 
+
+SELECT * FROM emp WHERE job LIKE 'S%';
+
+- This means we will get all records where the job starts with an S. The % operator is 
+a wildcard. It says the job needs to start with an 'S' but it doesn't matter what comes next. 
+
+SELECT * FROM emp WHERE job LIKE '%E';  --> this means the job title has to end with an E but
+it doesn't matter what becomes before the E. 
+
+
+****** ASSIGNMENT ******
+
+1. Return those employees that are salesman and that make either 300 dollars in commision
+or greater than 1000 in commission. 
+
+SOLUTION: SELECT * FROM emp WHERE job = 'SALESMAN' AND (comm = 300 OR comm > 1000);
