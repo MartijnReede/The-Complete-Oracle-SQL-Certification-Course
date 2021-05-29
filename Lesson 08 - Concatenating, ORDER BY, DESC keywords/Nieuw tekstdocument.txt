@@ -1,0 +1,63 @@
+****** AS KEYWORD ******
+
+- If the columns of a table don't have names that are easy to understand, we can give them 
+aliases.
+
+Example: 
+SELECT ename AS Last_Name, job AS Job_Title, comm AS Commision from emp;
+
+- The example above will return a table with the following column names: 
+Last_Name, Job_Title and Commision. 
+
+- If we want to use spaces in between the words of the new alias, we have to use
+double quotes like this:
+
+Example:
+SELECT ename AS "Last Name" FROM emp;
+
+
+****** CONCATENATING / THE || operator ******
+
+- If we want the data to be presented as a scentence, for example: "The name of this employee is: REEDE"
+we have to use the pipes operator. 
+
+Example:
+SELECT 'The name of this employee is: ' || ename AS LAST_NAME FROM emp;
+
+Results:
+The name of this employee is: BLAKE
+The name of this employee is: CLARK
+The name of this employee is: JONES
+
+- If we want multiple columns to be combined we can write a query like this: 
+
+Example:
+SELECT ename || ' makes $' || sal || ' per month' AS "NAME AND SALARY p/m" FROM emp;
+
+- Again, pay attention to the double quotes for divining the column name. 
+
+
+****** ORDER BY / DESC KEYWORDS ******
+
+- We can order specific columns with the ORDER BY keywords. 
+
+Example:
+SELECT ename, sal FROM emp ORDER BY ename;
+
+- By default, the results are ordered from small to big. If we want to reverse this, we can use the
+DESC keyword.
+
+Example:
+SELECT ename, sal FROM emp ORDER BY sal DESC;
+
+- The query above means that we will descend from the biggest to smaller salaries. 
+
+- We can also order by multiple columns. 
+
+Example:
+SELECT * FROM emp ORDER BY deptno, sal DESC;
+
+- With the example above, the results will first be sorted based on the department number.
+After that it will order the results based on the salary from big to small. 
+
+
