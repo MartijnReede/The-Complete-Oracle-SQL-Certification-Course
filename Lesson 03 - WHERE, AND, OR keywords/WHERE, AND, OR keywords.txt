@@ -1,0 +1,43 @@
+****** WHERE keyword ******
+
+- The WHERE keyword can be used to filter data on certain levels. 
+
+- Example of statement: SELECT * FROM emp WHERE job = 'MANAGER';
+
+- The = operator means "is equal to". Different than in Java where you have to use two == operators. 
+
+- VERY IMPORTANT: SQL is not case sensitive, but if we refer to data, we need to be exact. If we are
+looking for employees with the JOB equal to MANAGER, we can't write it with lower cases. If we do that, no data
+will be found.  
+
+- Strings in SQL are written between single quotes, not double ones like in Java. 
+
+****** AND / OR keywords ******
+
+- The AND keyword can be used to select multiple conditions. 
+
+- Example of statement (job and salary): SELECT * FROM emp WHERE job = 'MANAGER' AND sal = 1600; 
+
+- We cannot use the AND keyword wordt multiple job titles.
+
+- Not working and WRONG statement would be: SELECT * FROM emp WHERE job = 'MANAGER' AND job = 'SALESMAN'; 
+This doesn't work since no employee has the role of 'MANAGER' AND 'SALESMAN'. We have to use the OR keyword
+to get all the managers and salesmen. 
+
+- The correct statement would be: SELECT * FROM emp WHERE job = 'MANAGER' OR job = 'SALESMAN';
+
+
+****** ORDER OF STATEMENT ******
+
+1. SELECT
+2. Columns
+3. FROM
+4. Table
+5. WHERE
+6. AND/OR
+7. AND/OR
+8. AND/OR
+9. etc.......
+
+
+
