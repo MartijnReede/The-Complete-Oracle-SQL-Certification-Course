@@ -1,0 +1,53 @@
+****** SINGLE ROW FUNCTIONS ******
+
+- A function is a pre divined program that performs some task. For example: return the sum of two values. 
+- We are not going to program any functions, SQL already has enough of them. 
+- Single row functions act on only one row at a time. It will return only a single value at a time. 
+- Even if you're not requesting any column, but still use a function. The result of the function
+will be visible for every row that is available in the particular table. 
+
+****** CONCAT FUNCTION ****** 
+
+- We already used a function before with the || operators to concat certain data. We can also use the CONCAT function:
+
+Example (both queries give the same result): 
+SELECT 'My name is ' || ename FROM emp;
+SELECT CONCAT('My name is', ename) FROM emp;
+
+- To give the column a nice name we could add the AS keyword:
+SELECT CONCAT ('My name is ', ename) AS MyName FROM emp;
+
+- IMPORTANT! The CONCAT function can only be used on two arguments. If we want to have four arguments, we have to use the
+CONCAT function three times (see assignment).
+
+****** UPPER FUNCTION ******
+
+- We can make all data capitalized with the UPPER function. 
+
+Example: 
+SELECT UPPER (ename) FROM emp;
+
+****** LOWER FUNCTION ******
+
+- This returns all data in lower case. 
+
+Example:
+SELECT LOWER('HELLO') FROM emp;
+
+****** COMBINING FUNCTIONS ******
+
+- Functions can be combined like below:
+
+Example:
+SELECT CONCAT(lower(ename), upper(' is the name')) FROM emp;
+
+****** TESTING A FUNCTION *******
+
+- For testing a function we can use the DUAL table. This table is available in the SQL language and contains
+only one row. We could test the LOWER function for example:
+SELECT LOWER ('HELLO') FROM DUAL;
+
+****** ASSIGNMENT ******
+
+1. Return values like this: NameOfEmp IS THE NAME and their job is: JOBTITLE.
+SELECT CONCAT (CONCAT (LOWER (ename), UPPER (' is the name')), (CONCAT (' and their job is: ', job))) AS Name_And_Job FROM emp;
