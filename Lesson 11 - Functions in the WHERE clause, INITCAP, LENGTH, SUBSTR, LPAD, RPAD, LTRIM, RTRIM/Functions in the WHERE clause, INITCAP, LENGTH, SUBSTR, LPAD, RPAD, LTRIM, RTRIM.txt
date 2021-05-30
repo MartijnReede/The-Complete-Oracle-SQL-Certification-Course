@@ -1,0 +1,77 @@
+****** SINGLE ROW FUNCTIONS IN THE WHERE CLAUSE ******
+
+- In the lessons before, we used the SRF in the SELECT clause. This caused results to be returned in lower case, upper case or concatenated. 
+- It is also possible to use SRF in the WHERE clause.
+
+Example:
+SELECT * FROM emp WHERE job = LOWER('MANAGER');
+
+- Since all job titles are written in upper case, this statement won't return any data because there is no match. SQL will search for 'manager' because
+of the LOWER SRF.
+
+****** SINGLE ROW CHARACTER FUNCTIONS / OTHER FUNCTIONS ******
+
+- The functions we learned until now are single row character functions. This is because we are refering to characters, making them upper case, lower case or
+concatenated. 
+
+- There are also numeric functions, date functions, null functions, etc....
+
+****** INITCAP FUCNTION *******
+
+Example:
+SELECT INITCAP('hello my name is martijn') from DUAL;
+
+- The example above will return: "Hello My Name Is Martijn". It returns the scentence with all first letters capitalized.
+
+****** LENGTH FUNCTION ******
+
+Example:
+SELECT length(ename) as NameLength FROM emp;
+
+- The example above will return the length of each name.  
+
+****** SUBSTR FUNCTION ******
+
+- The substring function has three arguments. 
+1. The String.
+2. Starting position of the extraction.
+3. The number of characters that we want to extract. 
+
+Example:
+SELECT substr ('hello', 2, 2) FROM dual;
+
+- The result will be: 'el'. It starts on the 2nd character and it returns a maximum of 2 characters. 
+
+- We can also leave the last number out. This means we will start at character 2 until the end.
+
+****** LPAD and RPAD FUNCTIONS ******
+
+- With the LPAD and RPAD functions, we can "pad" certain Strings. 
+
+Example:
+SELECT LPAD ('Hello', 10, '$') FROM DUAL; 
+
+- The result of the query above will be: $$$$$Hello. This function will make the value larger until 10 characters with '$'.
+
+Example
+SELECT RPAD ('Hello', 10, '$') FROM DUAL;
+
+- The result of the query above will be: Hello$$$$$. It does the same thing but on the right side.
+
+****** LTRIM and RTRIM FUNCTIONS ******
+
+Example: 
+SELECT LTRIM('hhhhhhhhhello', 'h') FROM DUAL;
+
+- The query above will remove all the 'h' characters from the left. 
+
+Example:
+SELECT RTRIM ('helloHHHHHHHH', 'H') FROM DUAL;
+
+- The query above will remove all the 'H' characters from the right. 
+
+
+
+
+
+
