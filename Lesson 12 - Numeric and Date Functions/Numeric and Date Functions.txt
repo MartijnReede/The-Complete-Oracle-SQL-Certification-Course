@@ -1,0 +1,86 @@
+***** NUMERIC FUNCTIONS ******
+
+- Numeric functions are functions that take numbers as an input. 
+
+****** ROUND FUNCTION ******
+
+- The round function rounds certain numbers. It takes two arguments:
+1. The actual data / input number.
+2. The amount of numbers behind the decimal point.
+
+Example:
+SELECT ROUND (10.888, 2) FROM DUAL; 
+
+- The query from above will result in 10.89. 
+
+- It is also possible to not enter the second argument. In that case, the number will be rounded to an Integer. 
+
+Example:
+SELECT ROUND (10.88888) FROM DUAL;
+
+- The query from above will result in 11.
+
+****** TRUNC FUNCTION ******
+
+Example:
+SELECT TRUNC (10.382348) FROM DUAL;
+
+- The query from above will remove all numbers behind the decimal point. 
+
+Example:
+SELECT TRUNC (10.382348, 2) FROM DUAL;
+
+- The query from above will remove all decimal numbers except the first two. 
+
+****** SYSDATE / SYSTIMESTAMP FUNCTIONS ******
+
+Example:
+SELECT SYSDATE FROM DUAL;
+
+- The example above returns the date of the system the database is running on. 
+
+Example:
+SELECT SYSTIMESTAMP FROM DUAL;
+
+- The example from above will not only return the date of the system, but also the current time. 
+
+****** ADD_MONTHS FUNCTION *******
+
+Example: 
+SELECT add_months('01/01/1990', 5)FROM dual;
+
+- The example from above will add 5 months to the input date. 
+
+****** MONTHS_BETWEEN FUNCTION ******
+
+Example:
+SELECT MONTHS_BETWEEN('01/01/1990', '01/01/1985') FROM DUAL;
+
+- The example from above will return the month difference between both input dates. The result of tis example will be: 60.
+
+****** TRUNC FUNCTION FOR DATES ******
+
+- We can use the TRUNC function for dates. We can remove the months or years, NOT the days!
+
+- BE AWARE! It still shows the days, months and years. If the input date is 05-11-1990 and we remove the months, it will return 01-11-1990. It goes to the first
+available day in the month. If we do the same for year, it will return: 01-01-1990. It will go to the first available date in that particular year.   
+
+Example:
+SELECT TRUNC(hiredate, 'year') FROM emp;
+
+- So how is this useful? Well, if we want to display only employees that are hired in a certain year, we could use this query:
+
+Example:
+SELECT ename, hiredate, TRUNC(hiredate, 'month') from emp WHERE trunc(hiredate, 'year') = '01/01/1982';
+
+
+
+
+
+
+
+
+
+
+
+
